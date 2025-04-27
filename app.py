@@ -62,7 +62,7 @@ def delivery_report(err, msg):
 def bid():
     # Connecting to the DB and fetching the maximum bid till now
     cnx = conn.connect(host="localhost", user="root",
-                       passwd="mysql", database="test")
+                       passwd="root", database="auction")
     cur = cnx.cursor()
     query = "select max(price) from bid;"
 
