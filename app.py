@@ -56,7 +56,8 @@ def delivery_report(err, msg):
         msg.key(), msg.topic(), msg.partition(), msg.offset()))
 
 
-## 
+# Crea un evento en la subasta. Trae el esquema de kafka, serializa la informacion de la oferta y finalmente produce un mensaje en el topic.
+# Al final se ejecuta condicional trayendo info de DB, para validar si es oferta maxima o no.
 @app.route("/", methods=['GET', 'POST'])
 def bid():
     # Connecting to the DB and fetching the maximum bid till now
